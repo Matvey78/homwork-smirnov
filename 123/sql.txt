@@ -1,0 +1,22 @@
+START TRANSACTION;
+
+-- Создание таблицы employees
+CREATE TABLE IF NOT EXISTS employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    position VARCHAR(255) NOT NULL
+);
+
+-- Добавление нового сотрудника
+INSERT INTO employees (name, position) VALUES ('Имя1', 'Должность1'), ('Имя2', 'Должность2');
+
+-- Получение списка всех сотрудников
+SELECT * FROM employees;
+
+-- Удаление сотрудника
+DELETE FROM employees WHERE name = 'Имя1';
+
+-- Обновление информации о сотруднике
+UPDATE employees SET name = 'Новое Имя', position = 'Новая Должность' WHERE id = 1;
+
+COMMIT;
